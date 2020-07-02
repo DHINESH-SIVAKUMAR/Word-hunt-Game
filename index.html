@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word hunt game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <div class="game">
+    <div class="introduction">
+        <div id="title1">Word</div>
+        <div id="title2">Hunt</div><br>
+        <div id="inst">Instructions:</div id="inst">
+        <ol class="lists">
+            <li>The particular word is rearranged. </li>
+            <li>You find a correct word then type word in a textbox with 30 seconds. </li>
+            <li>Then click a <b>check</b> button.</li>
+            <li>Only one time use <b>skip</b> button</li>
+            <li>You got a 10 points for each correct words.</li>
+        </ol>
+            <button id="start" onclick="start()">Start Game</button>
+        </div>
+        <div class="background" style="display:none">
+            <nav>
+              <br>
+              <br>
+              <br>
+                <ul>
+                    <li id="score"></li>
+                    <li id="timer">0</li>
+                </ul>
+            </nav>
+            <br>
+            <br>
+           <p id="word" style="text-align: center;">D</p>
+            <span> <textarea id="textbox" rows="1" cols="20" maxlength="20"></textarea><span>
+                    <br><br>
+                    <button id="check" onclick="check_me()">CHECK IT!</button><br><br>
+                    <button id="skip" onclick="skip_one()">SKIP<img src="./assets/skip.png" height=20px width=20px/></button>
+        </div>
+        </div>
+    <div class="gameover-box" style="display:none">
+    <p id="gameover"> game over</p>
+    <p id="showscore"> Your score:10</p>
+    <button class="btn" onClick="history.go(0)">REPLAY </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
