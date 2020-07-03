@@ -1,4 +1,6 @@
-var words=["java","javascript","karur"]
+var words=["python","java","javascript","ruby","html","cobol","swift","sql",
+"database","server","computer","mouse","program","binary","desktop","hypertext",
+"internet","angular","password","zip"]
 var word="";
 var score=0,timeLeft=30,timerId;
 var elem = document.getElementById('timer');
@@ -19,8 +21,11 @@ function start(){
   load()
 }
 function check_me(){
-  var text_area=document.getElementById("textbox").value;
+  document.getElementById("wrong").style.display="none";
+  var text_area=document.getElementById("textbox").value.toLowerCase();
   if(word==text_area){
+    var x = new Audio("./assets/my_sound.wav")
+    x.play(); 
     score+=10;
     clearInterval(timerId);
     scr.innerHTML="Score:"+score;
@@ -28,7 +33,7 @@ function check_me(){
     load();
   }
   else
-  console.log("fail");
+  document.getElementById("wrong").style.display="block";
 }
 function count(){
   timeLeft=30;
@@ -36,6 +41,8 @@ timerId = setInterval(countdown, 1000);
 }
 function countdown() {
   if (timeLeft == 0) {
+    var y = new Audio("./assets/game_over.wav")
+    y.play();
    clearInterval(timerId);
    document.querySelector(".game").style.display="none";
    document.querySelector(".background").style.display="none";
